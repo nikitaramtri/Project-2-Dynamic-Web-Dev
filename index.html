@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="coding lamguages and framework links">
+    <meta name="author" content="Nikita Ramtri">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code it UP!</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            left: 0;
+            padding :0;
+            margin :0;
+        }
+        .background-container{
+            position: relative;
+            width: 100vw;
+            height: 85vh;
+            background: black url("Images/bgpic2.png") no-repeat center fixed;
+            opacity: 0.6;
+        }
+        .heading-container {
+            box-shadow: 2px 2px 5px darkgray;
+            border-top: 2px darkgray;
+            border-left: 2px darkgray;
+            color: whitesmoke;
+            text-align: justify;
+            position: absolute;
+            width:auto;
+            line-height: 10vh;
+            padding: 2vh 0;
+            top:50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+        .arrow{
+            position: absolute;
+            top:85%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: auto;
+            width: auto;
+            margin: auto;
+        }
+        .down-key{
+            height:70px;
+            width: 70px;
+            align-self: center;
+        }
+        .lists{
+            padding: 5vmin;
+            height: 80vh;
+        }
+        #main {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+            /*-moz-flex-flow: wrap;*/
+            /*-webkit-flex-flow: wrap;*/
+            /*flex-flow: wrap;*/
+        }
+        #main li{
+            width: auto;
+            padding:1px 2px;
+            box-shadow: 2px 2px 2px lightslategrey;
+            font-size : 5vmin;
+        }
+        .footer{
+            padding: 2vmin 3vmin;
+            background: rgba(0,0,0,0.8);
+            color: whitesmoke;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+<div class="background-container">
+</div>
+<div class="heading-container">
+    <span style="font-size: 10vw; font-weight: bold">CODE</span><br>
+    <span style="font-size: 7vw; font-weight: bold">IT </span>
+    <span style="font-size: 13vw; font-weight: bold">UP;</span>
+    <!--<div style="font-size: 3vh;">Learn new languages, tools, frameworks and more...</div>-->
+</div>
+<div class="arrow">
+    <a href=""> <img class="down-key" src="Images/arrow2.png"> </a>
+</div>
+<div class = "lists">
+    <!--<div id="chartContainer" style="height: 370px; width: 100%;"></div>-->
+    <ul id="main">
+        <li id ="1" onclick="counter[0]++" >HTML</li>
+        <li id ="2" onclick="counter[1]++">CSS</li>
+        <li id ="3" onclick="counter[2]++">JAVASCRIPT</li>
+        <li id ="4" onclick="counter[3]++">C++</li>
+        <li id ="5" onclick="counter[4]++">C</li>
+        <li id = "6" onclick="counter[5]++">PYTHON</li>
+        <li id = "7" onclick="counter[6]++">SQL</li>
+    </ul>
+</div>
+
+<div class="footer">
+    <br>
+    <span style="font-size: 4vmin; font-weight: bold; font-style: italic">Have a suggestion?
+        <a href="mailto:nikitaramtri@gmail.com?Subject=Code%20it%20up!" target="_top" style="color: blanchedalmond" >Write to us!</a>
+    </span><br><br>
+    <span style="float: right; font-size: 3vmin;">Designed by Nikita Ramtri</span><br>
+</div>
+<!--<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>-->
+<script>
+    var counter = [0,0,0,0,0,0,0];
+
+        setInterval(counterFunction, 3000);
+
+        function counterFunction() {
+            var destinationArray = counter.slice();
+            // window.alert(counter[0] + counter[1] + counter[2] + counter[3] + counter[4] + counter[5] + counter[6]);
+            // for(var i = 0 ;i <7; i ++){
+            //     console.log(destinationArray[i]);
+            // }
+            destinationArray.sort(function (a, b) {
+                return b - a
+            });
+            var len = counter.length;
+
+            for (var i = 1; i <= len; i++) {
+                var index = destinationArray.indexOf(counter[i - 1]) + 1;
+                document.getElementById(i.toString()).style.order = index.toString();
+                destinationArray[index] = -1;
+            }
+        }
+
+
+</script>
+</body>
+</html>
